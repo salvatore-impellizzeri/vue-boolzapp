@@ -177,6 +177,42 @@
     margin-right: 20px;
 }
 
+
+/* 
+                CHAT CONTENT - BODY
+*/
+
+#chat-body{
+    width: 80%;
+    margin: auto;
+}
+
+.green-message, .white-message{
+    border-radius: 10px;
+    height: 50px;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.green-message{
+    background-color: #D5F9BA;
+
+}
+
+.white-message{
+    background-color: white;
+}
+
+.text-message{
+    font-size: 15px;
+}
+
+#chat-body .last-message-hour{
+    position: absolute;
+    bottom: 7px;
+    right: 15px;
+}
+
 /* 
                 CHAT CONTENT - FOOTER
 */

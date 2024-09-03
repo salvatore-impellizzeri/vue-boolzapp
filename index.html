@@ -125,6 +125,22 @@
                         </div>
                     </header>
 
+                    <!-- CONTENT CHAT - BODY -->
+
+                    <div id="chat-body" class="pt-5">
+
+                        <!-- MESSAGE -->
+
+                        <div v-for="(msg, i) in contacts[activeChat].messages" class="d-flex" :class="msg.status == 'received' ? 'justify-content-start':'justify-content-end'">
+                            <div :class="msg.status == 'received' ? 'white-message':'green-message' " class="px-3 py-4 position-relative d-flex align-items-center text-message">
+                                <div class="w-75">{{ msg.message }}</div>
+                                <div class="last-message-hour justify-content-end d-flex align-items-start">
+                                    {{ msg.hour }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- CONTENT CHAT - FOOTER -->
 
                     <footer>
