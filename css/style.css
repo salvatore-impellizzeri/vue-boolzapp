@@ -1,24 +1,121 @@
-/* 
-                    HEADER
-*/
-
-
-/* 
-                    MAIN
-*/
-
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 /* 
-                    FOOTER
+                    CONTENT
 */
 
+#bg-content{
+    background: linear-gradient(0deg, hsla(54, 13%, 84%, 1) 85%, hsla(174, 100%, 29%, 1) 85%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
+#content{
+    margin: auto;
+    width: 65%;
+    background-color: aliceblue;
+}
+
+.content-header{
+    background-color: #EAEAEA;
+    height: 70px;
+}
+
+#chat-content{
+    background-color: aqua;
+    height: 95vh;
+}
 
 /* 
-                    DEBUG
+                    LAT BAR
 */
 
+#lat-bar{
+    height: 95vh;
+    background-color: yellow;
+}
+
+.icon > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
 /* 
-                    RESPONSIVE
+                LAT BAR - HEADER
 */
+
+.user-name{
+    margin-left: 10px;
+}
+
+.tools{
+    width: 17%;
+    margin-right: 20px;
+}
+
+.tools > i{
+    cursor: pointer;
+    color: #B1B1B1;
+    font-size: 22px;
+}
+
+/* 
+                LAT BAR - NOTIFICHE
+*/
+
+.notifiche{
+    width: 100%;
+    height: 90px;
+    background-color: #8EDAFC;
+}
+
+.notifiche > .box-bell{
+    border-radius: 100%;
+    background-color: white;
+    margin-right: 15px;
+}
+
+.notifiche .fa-bell-slash{
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: #8EDAFC;
+    transform: translate(25%, 25%);
+}
+
+.notifiche-texts > a{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* 
+                LAT BAR - SEARCH BAR
+*/
+
+.bg-search{
+    background-color: #FAFAFA;
+}
+
+.bg-search > nav button{
+    width: 20%;
+    border: 1px solid rgb(243, 243, 243);
+    background-color: white;
+    color: #B5B8BA;
+}
+
+.bg-search > nav button > i{
+    margin: auto;
+}
+
+.input-class{
+    border-color: rgb(243, 243, 243);
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
