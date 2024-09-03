@@ -31,9 +31,9 @@
 
                 <div id="lat-bar" class="col-4 p-0">
 
-                    <!-- LAT BAR HEADER -->
+                    <!-- LAT BAR - HEADER -->
 
-                    <header class="content-header p-2 d-flex align-items-center justify-content-between">
+                    <header class="content-gray-box p-2 d-flex align-items-center justify-content-between">
                         <div class="user-io d-flex align-items-center">
                             <div class="icon">
                                 <img src="img/avatar_io.jpg" alt="">
@@ -77,11 +77,12 @@
                     </div>
 
                     <!-- CONTATTI -->
+
                     <div id="all-contacts">
-                        <div class="contact d-flex align-items-center p-3" v-for="(contact, i) in contacts">
+                        <div class="contact d-flex align-items-center p-3" v-for="(contact, i) in contacts" :class="{ 'active': activeChat === i }">
                             <div class="d-flex left-contact" @click="toggleChat(i)">
                                 <div class="icon">
-                                    <img :src="contacts[i].avatar" :alt="contacts[i].avatar" class="me-4">
+                                    <img :src="contacts[i].avatar" :alt="contacts[i].avatar" :class="{ 'change-bg': activeChat === i }" class="me-4">
                                 </div>
                                 <div>
                                     <div class="fw-medium">{{ contacts[i].name }}</div>
@@ -98,8 +99,10 @@
                 <!-- CHAT CONTENT -->
 
                 <div id="chat-content" class="col-8 p-0">  
+
+                    <!-- CHAT CONTENT - HEADER -->
                     
-                    <header class="content-header border-start border-secondary-subtle">
+                    <header class="content-gray-box border-start border-secondary-subtle">
                         <div class="d-flex align-items-center justify-content-between h-100 px-2">
                             <div class="d-flex align-items-center w-50">
                                 <div class="icon me-3">
@@ -109,38 +112,35 @@
                                     <div class="fw-medium w-100">
                                         {{ contacts[activeChat].name }}
                                     </div>
-                                    <div class="last-access" v-if="contact.messages.length > 0">
-                                        Ultimo accesso {{ contact.messages[contact.messages.length - 1].date }} alle {{ contact.messages[contact.messages.length - 1].hour }};
+                                    <div class="last-access" v-if="contacts[activeChat].messages.length > 0">
+                                        Ultimo accesso {{ contacts[activeChat].messages[contacts[activeChat].messages.length - 1].date }} alle {{ contacts[activeChat].messages[contacts[activeChat].messages.length - 1].hour }}
                                     </div>
                                 </div>
                             </div>
-                            <div>
-
+                            <div class="tools-chat d-flex justify-content-between">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
                             </div>
                         </div>
                     </header>
 
+                    <!-- CONTENT CHAT - FOOTER -->
+
+                    <footer>
+                        <div class="content-gray-box write-bar tools-chat-down row m-0">
+                            <div class="col-1 m-auto d-flex justify-content-center">
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div class="col-10">
+                            <input class="form-control message-bar" type="text" placeholder="Scrivi un messaggio">
+                            <div class="col-1 m-auto d-flex justify-content-center">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
+                    </footer>
                 </div>     
             </div>
         </div>
-
-        <!-- MAIN -->
-
-        <main>
-
-            <div class="container">
-
-            </div>
-
-        </main>
-
-        <!-- FOOTER -->
-
-        <Footer>
-
-            <div class="container"></div>
-
-        </Footer>
 
     </div>
 

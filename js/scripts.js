@@ -1,8 +1,8 @@
 const { createApp } = Vue;
 
 createApp({
-    data(){
-        return{
+    data() {
+        return {
             contacts: [
                 {
                     name: 'Michele',
@@ -193,7 +193,7 @@ createApp({
     },
 
     methods: {
-        toggleChat(i){
+        toggleChat(i) {
             this.activeChat = i;
         }
     }

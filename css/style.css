@@ -21,7 +21,7 @@
     background-color: aliceblue;
 }
 
-.content-header{
+.content-gray-box{
     background-color: #EAEAEA;
     height: 70px;
 }
@@ -29,6 +29,7 @@
 #chat-content{
     background-image: url(../img/mine.jpg);;
     height: 95vh;
+    position: relative;
 }
 
 /* 
@@ -59,7 +60,7 @@
     margin-right: 20px;
 }
 
-.tools > i{
+.tools > i, .tools-chat > i, .tools-chat-down i{
     cursor: pointer;
     color: #B1B1B1;
     font-size: 22px;
@@ -150,7 +151,7 @@
     width: 10%;
 }
 
-.contact:focus{
+.active {
     background-color: #E9EBEB;
 }
 
@@ -169,4 +170,35 @@
 
 .last-access{
     color: hwb(0 50% 50%);
+}
+
+.tools-chat{
+    width: 8%;
+    margin-right: 20px;
+}
+
+/* 
+                CHAT CONTENT - FOOTER
+*/
+
+.write-bar{
+    background-color: #F3EEEA;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-bar{
+    border: 0;
+    height: 50px;
+    width: 80%;
+    margin: auto;
+}
+
+.tools-chat-down i{
+    color: gray;
 }
