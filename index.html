@@ -148,9 +148,11 @@
                         <div class="content-gray-box write-bar tools-chat-down row m-0">
                             <div class="col-1 m-auto d-flex justify-content-center">
                                 <i class="fa-regular fa-face-smile"></i>
-                            </div class="col-10">
-                            <input @keyup.enter="sendMessage()" v-model="newMessage" class="form-control message-bar" type="text" placeholder="Scrivi un messaggio">
-                            <div class="col-1 m-auto d-flex justify-content-center">
+                            </div>
+                            <div class="col-10">
+                                <input @keyup.enter="sendMessage()" v-model="newMessage" class="form-control message-bar" type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="col-1 m-auto d-flex justify-content-center align-items-center gap-4">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>

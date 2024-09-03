@@ -189,7 +189,12 @@ createApp({
             ],
 
             activeChat : 0,
-            newMessage : ""
+            newMessage : "",
+            replyMessage: {
+                hour: '19:06',
+                message: 'OK!',
+                status: 'received'
+            }
         }
     },
 
@@ -204,10 +209,14 @@ createApp({
                     date: '10/01/2020',
                     hour: '19:04',
                     message: this.newMessage,
-                    status: 'sent'});
+                    status: 'sent'
+                });
                     this.newMessage = "";
-            }
-        }
-    },
 
-    }).mount("#app");
+                    setTimeout(() => {
+                        this.contacts[this.activeChat].messages.push(this.replyMessage);
+                    }, 1000);
+            }
+        },
+    }
+}).mount("#app");
