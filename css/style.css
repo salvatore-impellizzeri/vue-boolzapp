@@ -37,7 +37,7 @@
 
 #lat-bar{
     height: 95vh;
-    background-color: yellow;
+    background-color: white;
 }
 
 .icon > img{
@@ -118,4 +118,34 @@
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+/* 
+                LAT BAR - CONTATTI
+*/
+
+.contact{
+    background-color: white;
+    height: 70px;
+    border-top: 1px solid rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.last-message{
+    color: hsla(0, 0%, 50%, 0.5);
+    font-size: 13px;
+}
+
+.left-contact{
+    width: 90%;
+}
+
+.right-contact{
+    height: 70px;
+    width: 10%;
+}
+
+.last-message-hour{
+    color: hsla(0, 0%, 50%, 0.5);
+    font-size: 10px;
 }
