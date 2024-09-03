@@ -189,12 +189,26 @@ createApp({
             ],
 
             activeChat : 0,
+            newMessage : ""
         }
     },
 
     methods: {
         toggleChat(i) {
             this.activeChat = i;
+        },
+
+        sendMessage(){
+            if(this.newMessage.trim()){
+                this.contacts[this.activeChat].messages.push({
+                    date: '10/01/2020',
+                    hour: '15:51',
+                    message: this.newMessage,
+                    status: 'sent'});
+                this.newMessage = "";
+            }
+
         }
-    }
-}).mount("#app");
+    },
+
+    }).mount("#app");

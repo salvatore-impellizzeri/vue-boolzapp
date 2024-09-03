@@ -137,6 +137,7 @@
                                 <div class="last-message-hour justify-content-end d-flex align-items-start">
                                     {{ msg.hour }}
                                 </div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
@@ -148,7 +149,7 @@
                             <div class="col-1 m-auto d-flex justify-content-center">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div class="col-10">
-                            <input class="form-control message-bar" type="text" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter="sendMessage()" v-model="newMessage" class="form-control message-bar" type="text" placeholder="Scrivi un messaggio">
                             <div class="col-1 m-auto d-flex justify-content-center">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
