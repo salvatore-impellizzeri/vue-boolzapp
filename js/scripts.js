@@ -202,12 +202,11 @@ createApp({
             if(this.newMessage.trim()){
                 this.contacts[this.activeChat].messages.push({
                     date: '10/01/2020',
-                    hour: '15:51',
+                    hour: '19:04',
                     message: this.newMessage,
                     status: 'sent'});
-                this.newMessage = "";
+                    this.newMessage = "";
             }
-
         }
     },
 
