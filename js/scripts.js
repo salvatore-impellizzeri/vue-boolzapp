@@ -186,11 +186,15 @@ createApp({
                         }
                     ],
                 }
-            ] 
+            ],
+
+            activeChat : 0,
         }
     },
 
     methods: {
-
+        toggleChat(i){
+            this.activeChat = i;
+        }
     }
 }).mount("#app");

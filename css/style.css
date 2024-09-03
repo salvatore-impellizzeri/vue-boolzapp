@@ -27,7 +27,7 @@
 }
 
 #chat-content{
-    background-color: aqua;
+    background-image: url(../img/mine.jpg);;
     height: 95vh;
 }
 
@@ -124,6 +124,11 @@
                 LAT BAR - CONTATTI
 */
 
+#all-contacts{
+    overflow-y: scroll;
+    height: calc(100% - (70px + 70px + 90px));
+}
+
 .contact{
     background-color: white;
     height: 70px;
@@ -131,7 +136,7 @@
     cursor: pointer;
 }
 
-.last-message{
+.last-message, .last-access{
     color: hsla(0, 0%, 50%, 0.5);
     font-size: 13px;
 }
@@ -145,7 +150,23 @@
     width: 10%;
 }
 
+.contact:focus{
+    background-color: #E9EBEB;
+}
+
+/* 
+                    CHAT CONTENT
+*/
+
+/* 
+                CHAT CONTENT - HEADER
+*/
+
 .last-message-hour{
     color: hsla(0, 0%, 50%, 0.5);
     font-size: 10px;
+}
+
+.last-access{
+    color: hwb(0 50% 50%);
 }
