@@ -70,7 +70,7 @@
                                 <button class="d-flex align-items-center">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
-                                <input class="form-control input-class" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                                <input class="form-control input-class" type="search" @keydown.enter.prevent v-model="searchQuery" placeholder="Cerca o inizia una nuova chat">
                               </form>
                             </div>
                           </nav>
@@ -79,18 +79,20 @@
                     <!-- CONTATTI -->
 
                     <div id="all-contacts">
-                        <div class="contact d-flex align-items-center p-3" v-for="(contact, i) in contacts" :class="{ 'active': activeChat === i }">
-                            <div class="d-flex left-contact" @click="toggleChat(i)">
-                                <div class="icon">
-                                    <img :src="contacts[i].avatar" :alt="contacts[i].avatar" :class="{ 'change-bg': activeChat === i }" class="me-4">
+                        <div v-for="(contact, i) in contacts">
+                            <div class="contact d-flex align-items-center p-3" v-if="(contact.name).toLowerCase().includes(searchQuery.toLowerCase())" :class="{ 'active': activeChat === i }">
+                                <div class="d-flex left-contact" @click="toggleChat(i)">
+                                    <div class="icon">
+                                        <img :src="contacts[i].avatar" :alt="contacts[i].avatar" class="me-4">
+                                    </div>
+                                    <div>
+                                        <div class="fw-medium">{{ contacts[i].name }}</div>
+                                        <div v-if="contact.messages.length > 0" class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="fw-medium">{{ contacts[i].name }}</div>
-                                    <div v-if="contact.messages.length > 0" class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
+                                <div class="right-contact py-2">
+                                    <div v-if="contact.messages.length > 0" class="last-message-hour justify-content-end d-flex align-items-start">{{ contact.messages[contact.messages.length - 1].hour }}</div>
                                 </div>
-                            </div>
-                            <div class="right-contact py-2">
-                                <div v-if="contact.messages.length > 0" class="last-message-hour justify-content-end d-flex align-items-start">{{ contact.messages[contact.messages.length - 1].hour }}</div>
                             </div>
                         </div>
                     </div>

@@ -194,7 +194,8 @@ createApp({
                 hour: '19:06',
                 message: 'OK!',
                 status: 'received'
-            }
+            },
+            searchQuery: ""
         }
     },
 
