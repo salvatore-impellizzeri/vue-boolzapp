@@ -218,6 +218,6 @@ createApp({
                         this.contacts[this.activeChat].messages.push(this.replyMessage);
                     }, 1000);
             }
-        },
+        }
     }
 }).mount("#app");

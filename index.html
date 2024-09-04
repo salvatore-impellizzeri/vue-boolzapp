@@ -87,7 +87,9 @@
                                     </div>
                                     <div>
                                         <div class="fw-medium">{{ contacts[i].name }}</div>
-                                        <div v-if="contact.messages.length > 0" class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
+                                        <div v-if="contact.messages.length > 0" class="last-message">{{ contact.messages[contact.messages.length - 1].message.length > 50 
+                                            ? contact.messages[contact.messages.length - 1].message.slice(0, 50) + "..." 
+                                            : contact.messages[contact.messages.length - 1].message }}</div>
                                     </div>
                                 </div>
                                 <div class="right-contact py-2">
@@ -139,7 +141,6 @@
                                 <div class="last-message-hour justify-content-end d-flex align-items-start">
                                     {{ msg.hour }}
                                 </div>
-                                <div></div>
                             </div>
                         </div>
                     </div>
@@ -162,7 +163,6 @@
                 </div>     
             </div>
         </div>
-
     </div>
 
         <!-- JS -->
